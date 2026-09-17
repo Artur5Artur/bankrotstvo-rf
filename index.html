@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Законное списание долгов | Банкротство физических лиц</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --success: #16a34a;
+            --bg-light: #f8fafc;
+            --text-main: #334155;
+            --text-light: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .header-contacts {
+            text-align: right;
+        }
+
+        .phone {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .schedule {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 38px;
+            line-height: 1.2;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .benefits-list li {
+            margin-bottom: 12px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        .hero-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .hero-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .hero-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        /* Quiz Section */
+        .quiz-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 50px;
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--bg-light);
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .quiz-step h4 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .quiz-option {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 14px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--accent);
+            background: #eff6ff;
+        }
+
+        /* Problems Section */
+        .problems {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .problem-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .problem-card h3 {
+            font-size: 18px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .problem-card p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Steps Section */
+        .steps {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+        }
+
+        .step-item h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .step-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #94a3b8;
+            padding: 40px 0;
+            font-size: 13px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 11px;
+            color: #64748b;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid, .problems-grid, .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            .quiz-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">Право<span>Защита</span></div>
+            <div class="header-contacts">
+                <a href="tel:88005553535" class="phone">8 (800) 555-35-35</a>
+                <div class="schedule">Бесплатно по РФ • Работаем 24/7</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h1>Законное списание долгов по кредитам и МФО с гарантией в договоре</h1>
+                <p class="hero-subtitle">Избавьтесь от давления банков и коллекторов раз и навсегда в соответствии с Федеральным законом № 127-ФЗ.</p>
+                <ul class="benefits-list">
+                    <li>🛡️ Сохранение имущества и единственного жилья</li>
+                    <li>📝 Официальное списание задолженности от 300 000 рублей</li>
+                    <li>⚖️ Первый анализ вашей ситуации арбитражным управляющим — <b>бесплатно</b></li>
+                </ul>
+                <a href="#quiz" class="btn">Узнать, подходите ли вы под закон</a>
+            </div>
+            <div class="hero-card">
+                <h3>Экспресс-проверка должника</h3>
+                <p>Пройдите короткий тест за 1 минуту и получите расчет стоимости процедуры и план защиты от коллекторов.</p>
+                <a href="#quiz" class="btn btn-block" style="text-align: center;">Пройти тест</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2 class="section-title">Онлайн-оценка возможности списания долга</h2>
+            <p class="section-subtitle">Ответьте на 3 вопроса, чтобы узнать результат и сумму расходов</p>
+            
+            <div class="quiz-container">
+                <div class="quiz-step">
+                    <h4>Вопрос 1 из 3: Какова общая сумма ваших долгов перед банками, МФО и по распискам?</h4>
+                    <div class="quiz-options">
+                        <div class="quiz-option">До 300 000 рублей</div>
+                        <div class="quiz-option">От 300 000 до 500 000 рублей</div>
+                        <div class="quiz-option">От 500 000 до 1 000 000 рублей</div>
+                        <div class="quiz-option">Более 1 000 000 рублей</div>
+                    </div>
+                    <button class="btn btn-block" onclick="alert('Это демонстрационный макет. Для сбора лидов подключите этот код к Формам или Telegram API.')">Далее</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title">С каждым месяцем просрочки долг растет</h2>
+            <p class="section-subtitle">Как мы решаем основные проблемы наших клиентов:</p>
+            
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>Звонят коллекторы и угрожают?</h3>
+                    <p>Законно оградим вас и ваших родственников от любого общения с взыскателями на основании ФЗ № 230.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Списывают зарплату со счетов?</h3>
+                    <p>Сразу после подачи заявления в арбитражный суд все аресты и удержания судебных приставов прекращаются.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Боитесь потерять имущество?</h3>
+                    <p>Единственное жилье, одежда и предметы первой необходимости защищены законодательством на 100%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps">
+        <div class="container">
+            <h2 class="section-title">Как мы работаем</h2>
+            <p class="section-subtitle">Простой путь к вашей финансовой свободе в 4 шага</p>
+            
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <h4>Анализ</h4>
+                    <p>Изучаем вашу ситуацию и перспективы списания.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <h4>Сбор документов</h4>
+                    <p>Готовим полный пакет справок и заявлений в суд.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <h4>Защита в суде</h4>
+                    <p>Останавливаем пени, штрафы и действия приставов.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <h4>Свобода</h4>
+                    <p>Получаете решение суда о полном списании долгов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo" style="color: #ffffff;">Право<span>Защита</span></div>
+                <div>Все права защищены © 2026</div>
+            </div>
+            <div class="text-light disclaimer">
+                Информация на сайте носит ознакомительный характер и не является публичной офертой. Услуги по банкротству физических лиц оказываются в рамках Федерального закона № 127-ФЗ «О несостоятельности (банкротстве)».
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+  
