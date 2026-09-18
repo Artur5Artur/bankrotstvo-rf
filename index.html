@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -207,9 +208,24 @@
             transition: all 0.2s;
         }
 
-        .quiz-option:hover {
+        .quiz-option.selected {
             border-color: var(--accent);
             background: #eff6ff;
+            font-weight: 600;
+        }
+
+        .input-phone {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 16px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        
+        .input-phone:focus {
+            border-color: var(--accent);
         }
 
         /* Problems Section */
@@ -357,91 +373,10 @@
     <section id="quiz" class="quiz-section">
         <div class="container">
             <h2 class="section-title">Онлайн-оценка возможности списания долга</h2>
-            <p class="section-subtitle">Ответьте на 3 вопроса, чтобы узнать результат и сумму расходов</p>
+            <p class="section-subtitle">Ответьте на вопрос, чтобы узнать результат и сумму расходов</p>
             
-            <div class="quiz-container">
+            <div class="quiz-container" id="quiz-box">
                 <div class="quiz-step">
-                    <h4>Вопрос 1 из 3: Какова общая сумма ваших долгов перед банками, МФО и по распискам?</h4>
-                    <div class="quiz-options">
-                        <div class="quiz-option">До 300 000 рублей</div>
-                        <div class="quiz-option">От 300 000 до 500 000 рублей</div>
-                        <div class="quiz-option">От 500 000 до 1 000 000 рублей</div>
-                        <div class="quiz-option">Более 1 000 000 рублей</div>
-                    </div>
-                    <button class="btn btn-block" onclick="alert('Это демонстрационный макет. Для сбора лидов подключите этот код к Формам или Telegram API.')">Далее</button>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <h4>Вопрос: Какова общая сумма ваших долгов перед банками, МФО и по распискам?</h4>
 
-    <!-- Problems Section -->
-    <section class="problems">
-        <div class="container">
-            <h2 class="section-title">С каждым месяцем просрочки долг растет</h2>
-            <p class="section-subtitle">Как мы решаем основные проблемы наших клиентов:</p>
-            
-            <div class="problems-grid">
-                <div class="problem-card">
-                    <h3>Звонят коллекторы и угрожают?</h3>
-                    <p>Законно оградим вас и ваших родственников от любого общения с взыскателями на основании ФЗ № 230.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>Списывают зарплату со счетов?</h3>
-                    <p>Сразу после подачи заявления в арбитражный суд все аресты и удержания судебных приставов прекращаются.</p>
-                </div>
-                <div class="problem-card">
-                    <h3>Боитесь потерять имущество?</h3>
-                    <p>Единственное жилье, одежда и предметы первой необходимости защищены законодательством на 100%.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Steps Section -->
-    <section class="steps">
-        <div class="container">
-            <h2 class="section-title">Как мы работаем</h2>
-            <p class="section-subtitle">Простой путь к вашей финансовой свободе в 4 шага</p>
-            
-            <div class="steps-grid">
-                <div class="step-item">
-                    <div class="step-number">1</div>
-                    <h4>Анализ</h4>
-                    <p>Изучаем вашу ситуацию и перспективы списания.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">2</div>
-                    <h4>Сбор документов</h4>
-                    <p>Готовим полный пакет справок и заявлений в суд.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">3</div>
-                    <h4>Защита в суде</h4>
-                    <p>Останавливаем пени, штрафы и действия приставов.</p>
-                </div>
-                <div class="step-item">
-                    <div class="step-number">4</div>
-                    <h4>Свобода</h4>
-                    <p>Получаете решение суда о полном списании долгов.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo" style="color: #ffffff;">Право<span>Защита</span></div>
-                <div>Все права защищены © 2026</div>
-            </div>
-            <div class="text-light disclaimer">
-                Информация на сайте носит ознакомительный характер и не является публичной офертой. Услуги по банкротству физических лиц оказываются в рамках Федерального закона № 127-ФЗ «О несостоятельности (банкротстве)».
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-
-  
+                    
